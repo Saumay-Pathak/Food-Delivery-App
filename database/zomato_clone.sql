@@ -7,3 +7,6 @@ CREATE TABLE users (
     role ENUM('customer', 'restaurant') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+
