@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Optional border for the container */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Highlighting the container itself */
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 30px; /* Increased spacing between cards */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow for better visual separation */
+}
+
+.order-banner {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.order-info {
+    padding: 15px;
+}
+
+.order-info h2 {
+    margin: 0 0 10px 0;
+    color: #ff5722;
+}
+
+.order-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.toggle-details {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-start;
+}
+
+.toggle-details:hover {
+    background-color: #e64a19;
+}
+
+.order-details {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.order-details h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+ul li span {
+    font-size: 14px;
+    color: #555;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+.no-orders {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+/* Additional styling for enhanced separation */
+.order-card:not(:last-child) {
+    border-bottom: 2px solid #eee; /* Optional line between cards */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 500px) {
+    .container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .order-card {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

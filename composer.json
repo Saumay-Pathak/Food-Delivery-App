@@ -1,0 +1,8 @@
+{
+    "name": "zomato/zomato-clone",
+    "description": "A project for the Zomato clone app",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "phpmailer/phpmailer": "^6.5"
+    }
+}

@@ -1,0 +1,273 @@
+/* Global Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #ff5722;
+}
+
+a:hover {
+    color: #e64a19;
+}
+
+/* Button Styling */
+button.sidebar-toggle {
+    position: fixed;
+    top: 20px !important; /* Set top position to 35px with !important */
+    left: 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease; /* Smooth transition for opacity and position */
+}
+
+/* Ensure no other styles overwrite this */
+button.sidebar-toggle {
+    margin-top: 15px !important; /* Add this line to ensure margin override */
+}
+
+
+button.sidebar-toggle.hidden {
+    opacity: 0;
+    transform: translateY(-50px); /* Move button up and fade out when hidden */
+}
+
+button.sidebar-toggle.visible {
+    opacity: 1;
+    transform: translateY(0); /* Bring the button back to the visible position */
+}
+
+button.sidebar-toggle:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 0; /* Sidebar starts as hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 0;
+    overflow: hidden; /* Prevent any content from spilling out */
+    transition: width 0.3s ease, padding 0.3s ease; /* Animate the opening/closing */
+    z-index: 999;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1); /* Shadow for when open */
+    border-right: none; /* Remove border when collapsed */
+}
+
+/* Sidebar open state */
+.sidebar.open {
+    width: 300px; /* Sidebar width when open */
+    padding: 20px; /* Padding when open */
+    border-right: 1px solid #e0e0e0; /* Border when open */
+}
+
+/* Sidebar Profile */
+.sidebar-profile {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.sidebar-profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff5722;
+}
+
+.sidebar-profile h3 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+}
+
+.sidebar-profile p {
+    font-size: 14px;
+    color: #757575;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-nav li a {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sidebar-nav li a:hover {
+    color: #ff5722;
+}
+
+/* Main Content Wrapper */
+.main-content-wrapper {
+    margin-left: 0; /* No margin when sidebar is collapsed */
+    padding: 40px 20px;
+    width: 100%; /* Full width when sidebar is collapsed */
+    transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for layout */
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Allow text to wrap */
+}
+
+/* When sidebar is open, shift main content */
+.main-content-wrapper.shifted {
+    margin-left: 340px; /* Add 20px of space between the sidebar and the main content */
+    width: calc(100% - 320px); /* Reduce width when sidebar is open to accommodate the 20px gap */
+}
+
+/* Ensure content wraps */
+.main-content-wrapper * {
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+/* Order History */
+.order-history table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.order-history table th, .order-history table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-history table th {
+    background-color: #f9f9f9;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.order-history table td {
+    font-size: 14px;
+    color: #757575;
+}
+
+.order-history table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Explore Restaurants */
+.explore-restaurants {
+    margin-top: 40px;
+}
+
+.explore-restaurants .restaurants-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive grid */
+    gap: 20px;
+}
+
+.explore-restaurants .restaurant-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explore-restaurants .restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.explore-restaurants .restaurant-card img {
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.explore-restaurants .restaurant-card h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.explore-restaurants .restaurant-card p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #757575;
+}
+
+.explore-restaurants .restaurant-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.explore-restaurants .restaurant-card a:hover {
+    background-color: #e64a19;
+}
+.ratings {
+    /* display: flex; */
+    align-items: center;
+    margin: 8px 0;
+    font-size: 1.2rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #ddd; /* Default empty star color */
+    margin-right: 2px;
+}
+
+.star.filled {
+    color: #FFD700; /* Gold color for filled stars */
+}
+
+.star.half {
+    color: #FFD700; /* Gold color for half stars */
+    position: relative;
+}
+
+.star.half::after {
+    content: '★';
+    color: #ddd;
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    overflow: hidden;
+}
