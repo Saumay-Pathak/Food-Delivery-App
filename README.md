@@ -11,7 +11,6 @@ A PHP-based food delivery web application designed to manage restaurant menus, c
 - **User authentication** for customers and administrators
 - **Order placement and tracking**
 - **Admin panel** for restaurant and order management
-- **Integration with payment gateways**
 
 ---
 
@@ -28,8 +27,10 @@ A PHP-based food delivery web application designed to manage restaurant menus, c
 
 ### Root Directory
 
-- **`index.php`**: Entry point of the web application.
-- **`config.php`**: Configuration file for database and application settings.
+- **`customer/login.php`**: Entry point of the Customers.
+- **`restaurant/login.php`**: Entry point of the Restaurent Owners.
+- **`admin/login.php`**: Entry point of the Admin.
+- **`config.php`**: Configuration file for database.
 - **`composer.json`**: PHP Composer configuration file.
 - **`composer.lock`**: Dependency lock file.
 
