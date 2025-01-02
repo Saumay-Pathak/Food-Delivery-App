@@ -63,7 +63,7 @@ A PHP-based food delivery web application designed to manage restaurant menus, c
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Saumay-Pathak/Food-Delivery-App
    ```
 
 2. **Navigate to the project directory:**
